@@ -1,11 +1,25 @@
-"use client"; 
-import { useState } from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-// Заглушка с городами и факторами
-const cities = [
+/**
+ * Типы — явно объявляем допустимые ключи факторов,
+ * чтобы TypeScript понимал индексацию city.factors[f.key]
+ */
+type FactorKey = "safety" | "cost" | "salary" | "pollution" | "transport";
+
+type Factors = Record<FactorKey, number>;
+
+interface City {
+  name: string;
+  factors: Factors;
+}
+
+/** Пример данных — можно перенести в src/data/cities.json позже */
+const cities: City[] = [
   {
     name: "Berlin",
     factors: {
@@ -38,7 +52,7 @@ const cities = [
   },
 ];
 
-const factorsList = [
+const factorsList: { key: FactorKey; label: string }[] = [
   { key: "safety", label: "Safety" },
   { key: "cost", label: "Cost of Living" },
   { key: "salary", label: "Salary" },
@@ -47,7 +61,7 @@ const factorsList = [
 ];
 
 export default function Home() {
-  const [weights, setWeights] = useState({
+  const [weights, setWeights] = useState<Record<FactorKey, number>>({
     safety: 20,
     cost: 20,
     salary: 20,
@@ -55,23 +69,25 @@ export default function Home() {
     transport: 20,
   });
 
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<Array<City & { score: string }>>([]);
 
   const calculateRanking = () => {
     const scored = cities.map((city) => {
       let score = 0;
       factorsList.forEach((f) => {
-        score += city.factors[f.key] * (weights[f.key] / 100);
+        const factorValue = city.factors[f.key] ?? 0;
+        const weight = weights[f.key] ?? 0;
+        score += factorValue * (weight / 100);
       });
       return { ...city, score: score.toFixed(1) };
     });
 
-    scored.sort((a, b) => b.score - a.score);
+    scored.sort((a, b) => Number(b.score) - Number(a.score));
     setResults(scored);
   };
 
-  const updateWeight = (key, value) => {
-    setWeights({ ...weights, [key]: value });
+  const updateWeight = (key: FactorKey, value: number) => {
+    setWeights((prev) => ({ ...prev, [key]: value }));
   };
 
   return (
@@ -96,7 +112,7 @@ export default function Home() {
                   min={0}
                   max={100}
                   step={5}
-                  onValueChange={(val) => updateWeight(f.key, val[0])}
+                  onValueChange={(val: number[]) => updateWeight(f.key, val[0])}
                 />
               </div>
             ))}
