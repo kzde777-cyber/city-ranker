@@ -103,11 +103,19 @@ export default function HomePage() {
     const w = params.get("w");
     if (w) {
       const parts = w.split(",").map((n) => parseInt(n, 10));
-      if (parts.length === KEY_ORDER.length && parts.every((n) => !Number.isNaN(n))) {
-        setWeights({
-          [KEY_ORDER[0]]: parts[0],
-          [KEY_ORDER[1]]: parts[1],
-          [KEY_ORDER[2]]: parts[2],
+
+if (parts.length === KEY_ORDER.length && parts.every((n) => !Number.isNaN(n))) {
+  const nextWeights: Record<FactorKey, number> = KEY_ORDER.reduce(
+    (acc, key, idx) => {
+      acc[key] = parts[idx] ?? 0;
+      return acc;
+    },
+    {} as Record<FactorKey, number>
+  );
+
+  setWeights(nextWeights);
+}
+
         });
       }
     }
