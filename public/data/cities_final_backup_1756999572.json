@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Moscow",
+    "country": "Russia",
+    "lat": 55.75,
+    "lon": 37.62,
+    "gdp_per_capita": 14889.0185546875,
+    "unemployment": 2.527,
+    "climate_temp": 15.0,
+    "climate_rain": 500.0
+  },
+  {
+    "name": "Berlin",
+    "country": "Germany",
+    "lat": 52.52,
+    "lon": 13.4,
+    "gdp_per_capita": 55800.2194549412,
+    "unemployment": 3.406,
+    "road_safety": {
+      "Country/region": "Germany",
+      "Continent": "Europe",
+      "Per 100,000 inhabitants[7][1][8]": 3.35,
+      "Per 1 billion vehicle-km[9]": "4.2[2]",
+      "Total[a][7][1][10]": "2788",
+      "Date[b]": "2022[11]"
+    },
+    "incarceration": {
+      "Location": "Germany",
+      "Rates": "68",
+      "Number": "57955"
+    },
+    "infant_mortality": {
+      "Location": "Germany *",
+      "2020 rate": 3.7
+    },
+    "economic_freedom": {
+      "0": "2019 Economic Freedom of the World Index [4] Country Score Change  Hong Kong 90.2  0.0  Singapore 89.4  0.6  New Zealand 84.4  0.2  Switzerland 81.9  0.2  Australia 80.9  0.0  Ireland 80.5  0.1  United Kingdom 78.9  0.9  Canada 77.7  0.0  United Arab Emirates 77.1  0.0  Taiwan 77.3  0.7  Iceland 77.1  0.1  United States 76.8  1.1  Netherlands 76.8  0.6  Denmark 76.7  0.1  Estonia 76.6  2.2  Georgia 75.9  0.3  Luxembourg 75.9  0.5  Chile 75.4  0.2  Sweden 75.2  1.1  Finland 74.9  0.8  Lithuania 74.2  1.1  Malaysia 74.0  0.5  Czech Republic 73.7  0.5  Germany 73.5  0.7  Mauritius 73.0  2.1  Norway 73.0  1.3  Israel 72.8  0.6  Qatar 72.6  0.0  South Korea 72.3  1.5  Japan 72.1  0.2  Austria 72.0  0.2  Rwanda 71.1  2.0  North Macedonia 71.1  0.2  Macau 71.0  0.1  Latvia 70.4  3.2  Botswana 69.5  0.4  Bulgaria 69.0  0.7  Saint Lucia 68.7  1.1  Jamaica 68.6  0.5  Uruguay 68.6  0.6  Malta 68.6  0.1  Romania 68.6  0.8  Thailand 68.3  1.2  Cyprus 68.1  0.3  Peru 67.8  0.9  Poland 67.8  0.7  Armenia 67.7  1.0  Belgium 67.3  0.2  Colombia 67.3  1.6  Panama 67.2  0.2  Kosovo 67.0  0.4  Albania 66.5  2.0  Jordan 66.5  1.6  Bahrain 66.4  1.3  Saint Vincent and the Grenadines 65.8  1.9  Indonesia 65.8  1.6  Spain 65.7  0.6  Slovenia 65.5  0.7  Kazakhstan 65.4  3.7  Azerbaijan 65.4  1.1  Costa Rica 65.3  0.3  Portugal 65.3  1.9  Brunei Darussalam 65.1  0.9  Hungary 65.0  1.7  Slovakia 65.0  0.3  Mexico 64.7  0.1  Barbados 64.7  7.7  Turkey 64.6  0.8  Serbia 63.9  1.4  Philippines 63.8  1.2  France 63.8  0.1  Dominica 63.6  0.9  Cabo Verde 63.1  3.1  Bhutan 62.9  1.1  Morocco 62.9  1.0  The Bahamas 62.9  0.4  Guatemala 62.6  0.8  Côte d'Ivoire 62.4  0.4  Kyrgyz Republic 62.3  0.5  Italy 62.2  0.3  Fiji 62.2  0.2  Samoa 62.2  0.7  Bosnia and Herzegovina 61.9  0.5  El Salvador 61.8  1.4  Paraguay 61.8  0.3  Croatia 61.4  0.4  Seychelles 61.4  0.2  Oman 61.0  0.0  Dominican Republic 61.0  0.6  Kuwait 60.8  1.4  Saudi Arabia 60.7  1.1  Montenegro 60.5  3.8  Honduras 60.2  0.4  Tanzania 60.2  0.3  Uganda 59.7  2.3  Burkina Faso 59.4  0.6  Moldova 59.1  0.7  Russia 58.9  0.7  Namibia 58.7  0.2  China 58.4  0.6  Papua New Guinea 58.4  2.7  South Africa 58.3  4.7  Mali 58.1  0.5  Belarus 57.9  0.2  Cambodia 57.8  0.9  Greece 57.7  0.4  Nicaragua 57.7  1.2  Tonga 57.7  5.4  Ghana 57.5  1.5  Laos 57.4  3.8  Nigeria 57.3  1.2  Trinidad and Tobago 57.0  0.7  Guyana 56.8  1.9  Madagascar 56.6  0.2  Sri Lanka 56.4  1.4  Vanuatu 56.4  13.1  Senegal 56.3  0.6  Gabon 56.3  1.7  Mauritania 55.7  1.7  Guinea 55.7  3.5  Bangladesh 55.6  0.5  Tajikistan 55.6  2.7  Belize 55.4  1.7  Comoros 55.4  0.8  Tunisia 55.4  3.5  Mongolia 55.4  0.3  Benin 55.3  1.4  Vietnam 55.3  2.2  India 55.2  0.7  Kenya 55.1  0.4  Pakistan 55.0  0.6  Eswatini 54.7  1.2  Solomon Islands 54.6  2.9  São Tomé and Príncipe 54.0  0.4  Guinea-Bissau 54.0  2.9  Nepal 53.8  0.3  Ethiopia 53.6  0.8  Zambia 53.6  0.7  Myanmar 53.6  0.3  Uzbekistan 53.3  1.8  Maldives 53.2  2.1  Lesotho 53.1  0.8  Haiti 52.7  3.1  Egypt 52.5  0.9  Cameroon 52.4  0.5  The Gambia 52.4  0.1  Ukraine 52.3  0.4  Argentina 52.2  0.1  Micronesia 51.9  0.4  Brazil 51.9  0.5  Niger 51.6  2.1  Afghanistan 51.5  0.2  Malawi 51.4  0.6  Lebanon 51.1  2.1  Iran 51.1  0.2  Angola 50.6  2.0  Democratic Republic of Congo 50.3  1.8  Togo 50.3  2.5  Chad 49.9  0.6  Liberia 49.7  1.2  Central African Republic 49.1  0.1  Burundi 48.9  2.0  Mozambique 48.6  2.3  Turkmenistan 48.4  1.3  Suriname 48.1  0.0  Sudan 47.7  1.7  Sierra Leone 47.5  4.3  Kiribati 47.3  3.5  Djibouti 47.1  2.0  Ecuador 46.9  1.6  Algeria 46.2  1.5  Timor-Leste 44.2  3.9  Bolivia 42.3  1.8  Equatorial Guinea 41.0  1.0  Zimbabwe 40.4  3.6  Republic of Congo 39.7  0.8  Eritrea 38.9  2.8  Cuba 27.8  4.1  Venezuela 25.9  0.7  North Korea 5.9  0.1",
+      "1": "2022 Top Index of Economic Freedom[5][6] Country Score Change  Singapore 84.4  5.3  Switzerland 84.2  2.3  Ireland 82.0  0.6  New Zealand 80.6  3.3  Luxembourg 80.6  4.6  Taiwan 80.1  1.5  Estonia 80.0  1.8  Netherlands 79.5  2.7  Finland 78.3  2.2  Denmark 78.0  0.2  Sweden 77.9  3.2  Australia 77.7  4.7  Iceland 77.0  0.4  Norway 76.9  3.5  Canada 76.6  1.3  Germany 76.1  3.6  Lithuania 75.8  1.1  Latvia 74.8  2.5  South Korea 74.6  0.6  Chile 74.4  0.8  Czech Republic 74.4  0.6  Austria 73.8  0.1  Cyprus 72.9  1.5  United Kingdom 72.7  5.7  United States 72.1  2.7  Georgia 71.8  5.4  Malta 71.5  1.3  Barbados 71.3  6.3  Bulgaria 71.0  0.6  Mauritius 70.9  6.1  Portugal 70.8  3.3  Slovenia 70.5  2.2  United Arab Emirates 70.2  6.7  Uruguay 70.0  0.7  Japan 69.9  4.2  Slovakia 69.7  3.4  Belgium 69.6  0.5  The Bahamas 68.7  4.1  Poland 68.7  1.0  Samoa 68.3  6.4  Spain 68.2  1.7  Malaysia 68.1  6.3  Israel 68.0  5.8  Qatar 67.7  4.3  Croatia 67.6  4.0  Jamaica 67.4  1.6  Romania 67.1  2.4  Hungary 66.9  0.3  Cabo Verde 66.7  2.9  Albania 66.6  1.4  Peru 66.5  1.2  France 65.9  0.2  North Macedonia 65.7  2.9  Saint Vincent and the Grenadines 65.7  0.6  Costa Rica 65.4  1.2  Panama 65.4  0.8  Italy 65.4  0.5  Armenia 65.3  6.6  Serbia 65.2  2.0  Colombia 65.1  3.0  Botswana 64.8  2.8  Brunei Darussalam 64.8  1.8  Indonesia 64.4  2.5  Kazakhstan 64.4  6.7  Saint Lucia 64.3  3.2  Mongolia 63.9  1.5  Mexico 63.7  1.8  Bosnia and Herzegovina 63.4  0.5  Guatemala 63.2  0.8  Thailand 63.2  6.5  Dominican Republic 63.0  0.9  Vanuatu 62.9  2.4  Paraguay 62.9  0.3  Bahrain 62.0  7.9  Azerbaijan 61.6  8.5  Ivory Coast 61.6  0.1  Greece 61.5  0.6  Moldova 61.3  1.2  Seychelles 61.1  5.2  Philippines 61.1  3.0  Benin 61.0  1.4  Micronesia 61.0  10.6  Tonga 60.8  3.3  Vietnam 60.6  1.1  São Tomé and Príncipe 60.3  4.4  Kosovo 60.1  6.4  Jordan 60.1  4.5  Senegal 60.0  2.0  Ghana 59.8  0.6  El Salvador 59.6  1.4  Guyana 59.5  2.1  Honduras 59.5  0.3  Tanzania 59.5  1.8  Bhutan 59.3  1.0  Namibia 59.2  3.4  Kiribati 59.2  14.8  Morocco 59.2  4.1  Madagascar 58.9  1.2  Trinidad and Tobago 58.8  0.2  Burkina Faso 58.3  1.8  Kuwait 58.3  5.8  The Gambia 58.0  0.8  Montenegro 57.8  5.6  Togo 57.2  0.3  Rwanda 57.1  11.2  Cambodia 57.1  0.2  Turkey 56.9  7.1  Oman 56.6  8.0  Belize 56.6  0.9  Solomon Islands 56.5  0.0  Fiji 56.4  5.8  South Africa 56.2  3.5  Russia 56.1  5.4  Mali 55.9  0.3  Gabon 55.8  2.3  Kyrgyzstan 55.8  7.9  Uzbekistan 55.7  2.6  Saudi Arabia 55.5  10.5  Mauritania 55.3  0.8  Djibouti 55.3  0.9  Niger 54.9  2.4  Nicaragua 54.8  1.5  Papua New Guinea 54.6  4.3  Nigeria 54.4  4.3  Dominica 54.4  1.4  Ecuador 54.3  1.9  Uganda 54.2  4.4  Tunisia 54.2  2.4  Guinea 54.2  2.3  Ukraine 54.1  2.1  India 53.9  2.6  Sri Lanka 53.3  2.4  Brazil 53.3  0.1  Malawi 53.0  0.0  Belarus 53.0  8.0  Cameroon 52.9  0.5  Bangladesh 52.7  3.8  Kenya 52.6  2.3  Angola 52.6  1.6  Sierra Leone 52.0  0.3  Eswatini 51.4  3.7  Mozambique 51.3  0.3  Comoros 50.4  5.3  Argentina 50.1  2.6  Haiti 50.0  0.8  Chad 49.8  0.6  Tajikistan 49.7  5.5  Nepal 49.7  1.0  Myanmar 49.6  5.6  Ethiopia 49.6  2.1  Laos 49.2  4.7  Egypt 49.1  6.6  Pakistan 48.8  2.9  Zambia 48.7  1.7  Republic of the Congo 48.5  2.2  Suriname 48.1  1.7  Lesotho 48.1  5.4  China 48.0  10.4  Liberia 47.9  1.3  Congo-Kinshasa 47.6  1.4  Maldives 47.3  7.9  Lebanon 47.3  4.1  Equatorial Guinea 47.2  2.0  Timor-Leste 46.3  1.6  Turkmenistan 46.2  1.2  Guinea-Bissau 46.0  8.9  Algeria 45.8  3.9  Central African Republic 45.7  3.1  Bolivia 43.0  0.3  Iran 42.4  4.8  Eritrea 39.7  2.6  Burundi 39.4  10.5  Zimbabwe 33.1  6.4  Sudan 32.0  7.1  Cuba 29.5  1.4  Venezuela 24.8  0.1  North Korea 3.0",
+      "2": NaN
+    },
+    "climate_temp": 15.0,
+    "climate_rain": 500.0
+  }
+]

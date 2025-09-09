@@ -1,0 +1,9 @@
+requests
+pandas
+wbdata
+aiohttp>=3.9.0
+pycountry>=23.12.11
+pyarrow   # чтобы сохранять Parquet (если нужно)
+aiohttp
+lxml
+beautifulsoup4

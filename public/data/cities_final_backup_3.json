@@ -1,0 +1,103 @@
+[
+  {
+    "city": "Kabul",
+    "country": "AF",
+    "population": 4600000.0,
+    "incarceration": 45.0,
+    "economic_freedom": 51.5,
+    "english_speakers": 41130000.0
+  },
+  {
+    "city": "Herat",
+    "country": "AF",
+    "population": 600000.0,
+    "incarceration": 45.0,
+    "economic_freedom": 51.5,
+    "english_speakers": 41130000.0
+  },
+  {
+    "city": "Mazar-i-Sharif",
+    "country": "AF",
+    "population": 500000.0,
+    "incarceration": 45.0,
+    "economic_freedom": 51.5,
+    "english_speakers": 41130000.0
+  },
+  {
+    "city": "Tirana",
+    "country": "AL",
+    "population": 418495.0,
+    "incarceration": 168.0,
+    "economic_freedom": 66.5,
+    "pisa": 368.0
+  },
+  {
+    "city": "Algiers",
+    "country": "DZ",
+    "population": 3415811.0,
+    "incarceration": 217.0,
+    "economic_freedom": 46.2,
+    "english_speakers": 35954000.0
+  },
+  {
+    "city": "Oran",
+    "country": "DZ",
+    "population": 803329.0,
+    "incarceration": 217.0,
+    "economic_freedom": 46.2,
+    "english_speakers": 35954000.0
+  },
+  {
+    "city": "Buenos Aires",
+    "country": "AR",
+    "population": 16157000.0,
+    "incarceration": 254.0,
+    "economic_freedom": 52.2,
+    "pisa": 378.0,
+    "english_speakers": 42192500.0
+  },
+  {
+    "city": "Córdoba",
+    "country": "AR",
+    "population": 1428000.0,
+    "incarceration": 254.0,
+    "economic_freedom": 52.2,
+    "pisa": 378.0,
+    "english_speakers": 42192500.0
+  },
+  {
+    "city": "Sydney",
+    "country": "AU",
+    "population": 5312000.0,
+    "incarceration": 157.0,
+    "economic_freedom": 80.9,
+    "pisa": 487.0,
+    "english_speakers": 25422788.0
+  },
+  {
+    "city": "Melbourne",
+    "country": "AU",
+    "population": 5078000.0,
+    "incarceration": 157.0,
+    "economic_freedom": 80.9,
+    "pisa": 487.0,
+    "english_speakers": 25422788.0
+  },
+  {
+    "city": "Vienna",
+    "country": "AT",
+    "population": 1921153.0,
+    "incarceration": 101.0,
+    "economic_freedom": 72.0,
+    "pisa": 487.0,
+    "english_speakers": 8415000.0
+  },
+  {
+    "city": "Baku",
+    "country": "AZ",
+    "population": 2235000.0,
+    "incarceration": 244.0,
+    "economic_freedom": 65.4,
+    "english_speakers": 9594300.0
+  }
+]

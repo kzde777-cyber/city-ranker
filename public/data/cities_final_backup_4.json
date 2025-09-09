@@ -1,0 +1,165 @@
+[
+  {
+    "city": "Tokyo",
+    "country": "JP",
+    "population": 37435191,
+    "incarceration": 33.0,
+    "economic_freedom": 72.1,
+    "pisa": 536.0
+  },
+  {
+    "city": "Delhi",
+    "country": "IN",
+    "population": 29399141,
+    "incarceration": 41.0,
+    "economic_freedom": 55.2,
+    "english_speakers": 1450000000.0
+  },
+  {
+    "city": "Shanghai",
+    "country": "CN",
+    "population": 26317104,
+    "incarceration": 119.0,
+    "economic_freedom": 58.4,
+    "english_speakers": 1432035200.0
+  },
+  {
+    "city": "São Paulo",
+    "country": "BR",
+    "population": 21846507,
+    "incarceration": 392.0,
+    "economic_freedom": 51.9,
+    "pisa": 379.0,
+    "english_speakers": 216000000.0
+  },
+  {
+    "city": "Mexico City",
+    "country": "MX",
+    "population": 21671908,
+    "incarceration": 174.0,
+    "economic_freedom": 64.7,
+    "pisa": 395.0,
+    "english_speakers": 120664000.0
+  },
+  {
+    "city": "Cairo",
+    "country": "EG",
+    "population": 20484965,
+    "incarceration": 116.0,
+    "economic_freedom": 52.5,
+    "english_speakers": 110990000.0
+  },
+  {
+    "city": "Mumbai",
+    "country": "IN",
+    "population": 20411274,
+    "incarceration": 41.0,
+    "economic_freedom": 55.2,
+    "english_speakers": 1450000000.0
+  },
+  {
+    "city": "Beijing",
+    "country": "CN",
+    "population": 20035455,
+    "incarceration": 119.0,
+    "economic_freedom": 58.4,
+    "english_speakers": 1432035200.0
+  },
+  {
+    "city": "Dhaka",
+    "country": "BD",
+    "population": 20183537,
+    "incarceration": 50.0,
+    "economic_freedom": 55.6,
+    "english_speakers": 165158616.0
+  },
+  {
+    "city": "Osaka",
+    "country": "JP",
+    "population": 19222665,
+    "incarceration": 33.0,
+    "economic_freedom": 72.1,
+    "pisa": 536.0
+  },
+  {
+    "city": "New York",
+    "country": "US",
+    "population": 18819000,
+    "incarceration": 541.0,
+    "economic_freedom": 76.8,
+    "pisa": 465.0,
+    "english_speakers": 312142415.0
+  },
+  {
+    "city": "Karachi",
+    "country": "PK",
+    "population": 15400000,
+    "incarceration": 38.0,
+    "economic_freedom": 55.0,
+    "english_speakers": 220892331.0
+  },
+  {
+    "city": "Buenos Aires",
+    "country": "AR",
+    "population": 15100000,
+    "incarceration": 254.0,
+    "economic_freedom": 52.2,
+    "pisa": 378.0,
+    "english_speakers": 42192500.0
+  },
+  {
+    "city": "Chongqing",
+    "country": "CN",
+    "population": 15000000,
+    "incarceration": 119.0,
+    "economic_freedom": 58.4,
+    "english_speakers": 1432035200.0
+  },
+  {
+    "city": "Istanbul",
+    "country": "TR",
+    "population": 15067724
+  },
+  {
+    "city": "Kolkata",
+    "country": "IN",
+    "population": 14617882,
+    "incarceration": 41.0,
+    "economic_freedom": 55.2,
+    "english_speakers": 1450000000.0
+  },
+  {
+    "city": "Manila",
+    "country": "PH",
+    "population": 13923452,
+    "incarceration": 162.0,
+    "economic_freedom": 63.8,
+    "pisa": 355.0,
+    "english_speakers": 110000000.0
+  },
+  {
+    "city": "Lagos",
+    "country": "NG",
+    "population": 13900000,
+    "incarceration": 37.0,
+    "economic_freedom": 57.3,
+    "english_speakers": 206200000.0
+  },
+  {
+    "city": "Rio de Janeiro",
+    "country": "BR",
+    "population": 13458000,
+    "incarceration": 392.0,
+    "economic_freedom": 51.9,
+    "pisa": 379.0,
+    "english_speakers": 216000000.0
+  },
+  {
+    "city": "Tianjin",
+    "country": "CN",
+    "population": 13245000,
+    "incarceration": 119.0,
+    "economic_freedom": 58.4,
+    "english_speakers": 1432035200.0
+  }
+]
