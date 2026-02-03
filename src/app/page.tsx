@@ -7,12 +7,12 @@ type FactorKey = "gdp_per_capita" | "life_expectancy" | "pm25" | "population_den
 interface City {
   city: string;
   country: string;
-  lat: number;
-  lon: number;
-  gdp_per_capita: number;
-  life_expectancy: number;
-  pm25: number;
-  population_density: number;
+  lat: number | null;
+  lon: number | null;
+  gdp_per_capita: number | null;
+  life_expectancy: number | null;
+  pm25: number | null;
+  population_density: number | null;
 }
 
 const FACTORS: Record<FactorKey, string> = {
@@ -29,6 +29,18 @@ const KEY_ORDER: FactorKey[] = [
   "population_density",
 ];
 
+// Neutral score to use when data is missing or invalid
+const NEUTRAL_SCORE = 0.5;
+
+// Helper function to coerce a value to number or return null
+function coerceToNumber(value: unknown): number | null {
+  if (value === null || value === undefined || value === "") {
+    return null;
+  }
+  const num = Number(value);
+  return Number.isFinite(num) ? num : null;
+}
+
 export default function Home() {
   const [cities, setCities] = useState<City[]>([]);
   const [weights, setWeights] = useState<Record<FactorKey, number>>({
@@ -42,12 +54,74 @@ export default function Home() {
   const [distanceWeight, setDistanceWeight] = useState(0);
   const [maxDistance, setMaxDistance] = useState(3000);
   const [origin, setOrigin] = useState<{ lat: number; lon: number } | null>(null);
+  const [dataError, setDataError] = useState<string | null>(null);
 
   // Загрузка JSON с городами
   useEffect(() => {
     fetch("/data/cities.json")
-      .then((res) => res.json())
-      .then((data) => setCities(data));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to fetch cities.json: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        // Validate that data is an array
+        if (!Array.isArray(data)) {
+          setDataError("Invalid data format: expected an array");
+          console.error("Cities data is not an array:", data);
+          return;
+        }
+
+        // Process and validate each city record
+        const processedCities = data
+          .map((raw: Record<string, unknown>, index: number) => {
+            // Coerce numeric fields
+            const city: City = {
+              city: String(raw.name || raw.city || ""),
+              country: String(raw.country_name || raw.country || ""),
+              lat: coerceToNumber(raw.lat),
+              lon: coerceToNumber(raw.lon),
+              gdp_per_capita: coerceToNumber(raw.gdp_per_capita),
+              life_expectancy: coerceToNumber(raw.life_expectancy),
+              pm25: coerceToNumber(raw.pm25),
+              population_density: coerceToNumber(raw.population_density),
+            };
+
+            // Log first city for debugging
+            if (index === 0) {
+              console.log("Sample city record (first row):", city);
+            }
+
+            return city;
+          })
+          .filter((city: City) => {
+            // Filter out unusable records: must have city name, country, and at least one valid scoring field
+            if (!city.city || !city.country) {
+              return false;
+            }
+            // Must have at least one valid scoring field to be useful
+            const hasValidField = 
+              city.gdp_per_capita !== null ||
+              city.life_expectancy !== null ||
+              city.pm25 !== null ||
+              city.population_density !== null;
+            return hasValidField;
+          });
+
+        if (processedCities.length === 0) {
+          setDataError("No usable city records found in data");
+          console.warn("All city records were filtered out as unusable");
+        } else {
+          console.log(`Loaded ${processedCities.length} usable cities out of ${data.length} total records`);
+        }
+
+        setCities(processedCities);
+      })
+      .catch((err) => {
+        setDataError(`Failed to load city data: ${err.message}`);
+        console.error("Error loading cities:", err);
+      });
   }, []);
 
   // все уникальные страны
@@ -66,10 +140,19 @@ export default function Home() {
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
-  // нормализация
-  const normalize = (val: number, min: number, max: number, invert = false) => {
-    if (max === min) return 0.5;
+  // Safe normalization with fallbacks
+  const normalize = (val: number | null, min: number, max: number, invert = false) => {
+    // If value is null/missing, return neutral score
+    if (val === null) return NEUTRAL_SCORE;
+    // If all values are the same (min === max), return neutral score
+    if (max === min) return NEUTRAL_SCORE;
+    // Check for invalid min/max
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return NEUTRAL_SCORE;
+    
     const n = (val - min) / (max - min);
+    // Ensure result is finite
+    if (!Number.isFinite(n)) return NEUTRAL_SCORE;
+    
     return invert ? 1 - n : n;
   };
 
@@ -77,18 +160,33 @@ export default function Home() {
   function computeScore(city: City): number {
     let score = 0;
     KEY_ORDER.forEach((key) => {
-      const values = cities.map((c) => c[key]);
-      const min = Math.min(...values);
-      const max = Math.max(...values);
+      // Only include cities with valid (non-null) values for this factor
+      const validValues = cities
+        .map((c) => c[key])
+        .filter((v): v is number => v !== null);
+      
+      // Skip this factor if no valid values exist
+      if (validValues.length === 0) {
+        return;
+      }
+      
+      const min = Math.min(...validValues);
+      const max = Math.max(...validValues);
       const invert = key === "pm25" || key === "population_density";
       const norm = normalize(city[key], min, max, invert);
-      score += norm * weights[key];
+      
+      // Only add to score if normalized value is valid
+      if (Number.isFinite(norm)) {
+        score += norm * weights[key];
+      }
     });
 
-    if (useDistance && origin) {
+    if (useDistance && origin && city.lat !== null && city.lon !== null) {
       const dist = haversine(origin.lat, origin.lon, city.lat, city.lon);
       const dNorm = normalize(dist, 0, maxDistance, true);
-      score += dNorm * distanceWeight;
+      if (Number.isFinite(dNorm)) {
+        score += dNorm * distanceWeight;
+      }
     }
 
     return score;
@@ -141,6 +239,24 @@ export default function Home() {
     <main className="p-6 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">City Ranker</h1>
 
+      {dataError && (
+        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          <h2 className="font-bold">Error Loading Data</h2>
+          <p>{dataError}</p>
+          <p className="mt-2 text-sm">
+            Please check the browser console for more details, or verify that 
+            public/data/cities.json exists and contains valid city records with 
+            required fields (city or name field, country field, and at least one numeric factor).
+          </p>
+        </div>
+      )}
+
+      {!dataError && cities.length === 0 && (
+        <div className="mb-6 p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded">
+          <p>Loading city data...</p>
+        </div>
+      )}
+
       <div className="mb-6 space-y-4">
         {KEY_ORDER.map((key) => (
           <div key={key} className="flex items-center space-x-2">
@@ -174,6 +290,12 @@ export default function Home() {
           </select>
         </div>
       </div>
+
+      {!dataError && cities.length > 0 && ranked.length === 0 && (
+        <div className="mb-6 p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded">
+          <p>No cities match the current filter.</p>
+        </div>
+      )}
 
       <table className="w-full border-collapse border">
         <thead>
