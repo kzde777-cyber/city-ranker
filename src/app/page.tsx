@@ -29,6 +29,9 @@ const KEY_ORDER: FactorKey[] = [
   "population_density",
 ];
 
+// Neutral score to use when data is missing or invalid
+const NEUTRAL_SCORE = 0.5;
+
 // Helper function to coerce a value to number or return null
 function coerceToNumber(value: unknown): number | null {
   if (value === null || value === undefined || value === "") {
@@ -140,15 +143,15 @@ export default function Home() {
   // Safe normalization with fallbacks
   const normalize = (val: number | null, min: number, max: number, invert = false) => {
     // If value is null/missing, return neutral score
-    if (val === null) return 0.5;
+    if (val === null) return NEUTRAL_SCORE;
     // If all values are the same (min === max), return neutral score
-    if (max === min) return 0.5;
+    if (max === min) return NEUTRAL_SCORE;
     // Check for invalid min/max
-    if (!Number.isFinite(min) || !Number.isFinite(max)) return 0.5;
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return NEUTRAL_SCORE;
     
     const n = (val - min) / (max - min);
     // Ensure result is finite
-    if (!Number.isFinite(n)) return 0.5;
+    if (!Number.isFinite(n)) return NEUTRAL_SCORE;
     
     return invert ? 1 - n : n;
   };
@@ -200,12 +203,10 @@ export default function Home() {
         .map((n) => parseInt(n, 10));
 
       if (parts.length === KEY_ORDER.length && parts.every((n) => !Number.isNaN(n))) {
-        const nextWeights: Record<FactorKey, number> = {
-          gdp_per_capita: parts[0],
-          life_expectancy: parts[1],
-          pm25: parts[2],
-          population_density: parts[3],
-        };
+        const nextWeights: Record<FactorKey, number> = { ...weights };
+        KEY_ORDER.forEach((k, i) => {
+          nextWeights[k] = parts[i];
+        });
         setWeights(nextWeights);
       }
     }
@@ -245,7 +246,7 @@ export default function Home() {
           <p className="mt-2 text-sm">
             Please check the browser console for more details, or verify that 
             public/data/cities.json exists and contains valid city records with 
-            required fields (city/name, country, and at least one numeric factor).
+            required fields (city or name field, country field, and at least one numeric factor).
           </p>
         </div>
       )}
